@@ -1,0 +1,23 @@
+{
+  "name": "com.jasonma.outlinenormalsmoother",
+  "version": "1.0.0",
+  "displayName": "Outline Normal Smoother",
+  "description": "A unity plugin that automatically calculates smooth normals for outline.",
+  "keywords": [
+    "toon",
+    "outline"
+  ],
+  "author": {
+    "name": "Jason Ma",
+    "email": "jasonma0012@foxmail.com",
+    "url": "https://github.com/JasonMa0012/OutlineNormalSmoother"
+  },
+  "unity": "2022.2",
+  "changelogUrl": "https://github.com/JasonMa0012/OutlineNormalSmoother/releases",
+  "documentationUrl": "https://github.com/JasonMa0012/OutlineNormalSmoother",
+  "licensesUrl": "https://github.com/JasonMa0012/OutlineNormalSmoother/blob/main/LICENSE",
+  "dependencies": {
+    "com.unity.collections": "2.1.0",
+    "com.unity.mathematics": "1.2.0"
+  }
+}
