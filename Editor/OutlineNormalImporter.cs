@@ -42,6 +42,9 @@ namespace OutlineNormalSmoother
         {
             List<Mesh> meshes = new ();
             
+            if (go == null)
+	            return meshes;
+            
             foreach (var meshFilter in go.GetComponentsInChildren<MeshFilter>())
             {
                 meshes.Add(meshFilter.sharedMesh);

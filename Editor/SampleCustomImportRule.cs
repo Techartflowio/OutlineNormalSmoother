@@ -1,4 +1,4 @@
-// Copyright (c) Jason Ma
+﻿// Copyright (c) Jason Ma
 //
 // Copy and modify this file to customize which models should bake outline normals.
 

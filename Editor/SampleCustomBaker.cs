@@ -1,4 +1,4 @@
-// Copyright (c) Jason Ma
+﻿// Copyright (c) Jason Ma
 //
 // Copy and modify this file to customize where outline normals are stored.
 
