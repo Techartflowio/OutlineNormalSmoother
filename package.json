@@ -1,6 +1,6 @@
 {
   "name": "com.jasonma.outlinenormalsmoother",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "displayName": "Outline Normal Smoother",
   "description": "A unity plugin that automatically calculates smooth normals for outline.",
   "keywords": [
