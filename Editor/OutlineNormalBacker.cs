@@ -131,17 +131,20 @@ namespace OutlineNormalSmoother
 					{
 						mesh.RecalculateNormals();
 						normals = mesh.normals;
+						Debug.Log($"OutlineNormalSmoother: ({ i + 1 } / { meshes.Count }) Recalculate Normals: { mesh.name }");
 					}
 
 					if (tangents.Length == 0)
 					{
 						mesh.RecalculateTangents();
 						tangents = mesh.tangents;
+						Debug.Log($"OutlineNormalSmoother: ({ i + 1 } / { meshes.Count }) Recalculate Tangents: { mesh.name }");
 					}
 
 					if (colors.Length == 0)
 					{
 						colors = Enumerable.Repeat(Color.white, vertexCount).ToArray();
+						Debug.Log($"OutlineNormalSmoother: ({ i + 1 } / { meshes.Count }) Init Vertex Colors: { mesh.name }");
 					}
 				}
 
@@ -206,6 +209,8 @@ namespace OutlineNormalSmoother
 				// Save
 				onSaveToMesh.Invoke(mesh, ref nativeColors, ref outSmoothedNormalTangentSpace);
 				mesh.MarkModified();
+				
+				Debug.Log($"OutlineNormalSmoother: ({ i + 1 } / { meshes.Count }) Saved to mesh: { mesh.name }");
 
 				// Clear
 				nativeVertices.Dispose();

@@ -19,8 +19,8 @@ namespace OutlineNormalSmoother
 		        ? AssetImporter.GetAtPath(assetPath) as ModelImporter
 		        : assetPostprocessor.assetImporter as ModelImporter; 
 
-	        // **_Outline.*
-	        shouldBakeOutlineNormal |= Path.GetFileNameWithoutExtension(assetPath).EndsWith("_Outline");
+	        // **_outline.*
+	        shouldBakeOutlineNormal |= Path.GetFileNameWithoutExtension(assetPath).ToLower().EndsWith("_outline");
 
 	        // Assets\Test\**
 	        shouldBakeOutlineNormal |= OutlineNormalImporter.NormalizeDirectorySeparatorChar(assetPath).StartsWith(

@@ -15,13 +15,17 @@ namespace OutlineNormalSmoother
 	    public delegate bool OutlineNormalImporterCustomRuleEvent(string assetPath, [MaybeNull] AssetPostprocessor assetPostprocessor);
         
 	    public static OutlineNormalImporterCustomRuleEvent shouldBakeOutlineNormal = 
-            (assetPath, assetPostprocessor) => assetPath.Contains("_outline.") || assetPath.Contains("_Outline.");
+            (assetPath, assetPostprocessor) => assetPath.ToLower().Contains("_outline.");
 
         private void OnPostprocessModel(GameObject go)
         {
             if (shouldBakeOutlineNormal(assetPath, this))
             {
-                OutlineNormalBacker.BakeSmoothedNormalTangentSpaceToMesh(GetSharedMeshesFromGameObject(go));
+	            var meshes = GetSharedMeshesFromGameObject(go);
+                
+	            Debug.Log($"OutlineNormalSmoother: Find { meshes.Count } meshes in file: { assetPath }");
+
+                OutlineNormalBacker.BakeSmoothedNormalTangentSpaceToMesh(meshes);
             }
         }
 
@@ -33,7 +37,11 @@ namespace OutlineNormalSmoother
                 if (shouldBakeOutlineNormal(movedAsset, null))
                 {
                     var movedGO = AssetDatabase.LoadAssetAtPath<GameObject>(movedAsset);
-                    OutlineNormalBacker.BakeSmoothedNormalTangentSpaceToMesh(GetSharedMeshesFromGameObject(movedGO));
+                    var meshes = GetSharedMeshesFromGameObject(movedGO);
+                    
+                    Debug.Log($"OutlineNormalSmoother: Find { meshes.Count } meshes in file: { movedGO }");
+                    
+                    OutlineNormalBacker.BakeSmoothedNormalTangentSpaceToMesh(meshes);
                 }
             }
         }
