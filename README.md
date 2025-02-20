@@ -19,7 +19,7 @@ This plugin quickly and automatically solves the problem of Toon Outlines breaki
 3. 你可以在`Packages\OutlineNormalSmoother\Test\DemoScene.unity`场景中用你的模型替换Cube模型查看平滑后的描边结果.
 4. 如果要在你自己的Shader使用描边法线, 请查看`Packages\OutlineNormalSmoother\Test\Shader_Outline`中的示例.
 
-
+--------
 
 1. Add the `_Outline` suffix to your model file name, e.g. `Cube_Outline.fbx`.
 2. Import the model into Unity, where the outline normals for the model will be automatically calculated and stored in the vertex color.
